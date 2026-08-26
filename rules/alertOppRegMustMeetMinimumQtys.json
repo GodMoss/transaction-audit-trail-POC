@@ -1,0 +1,133 @@
+{
+  "created": "2026-02-26T06:21:30.574318Z",
+  "modified": "2026-08-18T21:36:14.340095Z",
+  "id": 6854,
+  "name": "Alert: Opp Reg Must Meet Minimum Qtys",
+  "variableName": "alertOppRegMustMeetMinimumQtys",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.334211Z",
+        "modified": "2026-08-18T21:36:14.334211Z",
+        "id": 50502,
+        "index": 1,
+        "op": "less than",
+        "lhs": {
+          "field": true,
+          "dataType": "number",
+          "value": [
+            "txn.custom.nvSwitchSum"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "number",
+          "value": [
+            "2"
+          ],
+          "additionalPath": null
+        }
+      },
+      {
+        "created": "2026-08-18T21:36:14.335471Z",
+        "modified": "2026-08-18T21:36:14.335471Z",
+        "id": 50503,
+        "index": 2,
+        "op": "less than",
+        "lhs": {
+          "field": true,
+          "dataType": "number",
+          "value": [
+            "txn.custom.nvCableSum"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "number",
+          "value": [
+            "20"
+          ],
+          "additionalPath": null
+        }
+      },
+      {
+        "created": "2026-08-18T21:36:14.337010Z",
+        "modified": "2026-08-18T21:36:14.337010Z",
+        "id": 50504,
+        "index": 3,
+        "op": "less than",
+        "lhs": {
+          "field": true,
+          "dataType": "number",
+          "value": [
+            "txn.custom.nvAdapterSum"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "number",
+          "value": [
+            "10"
+          ],
+          "additionalPath": null
+        }
+      },
+      {
+        "created": "2026-08-18T21:36:14.338082Z",
+        "modified": "2026-08-18T21:36:14.338082Z",
+        "id": 50505,
+        "index": 4,
+        "op": "contains",
+        "lhs": {
+          "field": true,
+          "dataType": "array",
+          "value": [
+            "txn.custom.nvAvailableCompetencies"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "array",
+          "value": [
+            "Networking"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Message",
+      "created": "2026-08-18T21:36:14.332451Z",
+      "modified": "2026-08-18T21:36:14.332451Z",
+      "id": 37454,
+      "fieldVariableName": "transactionLineDetails",
+      "scriptId": null,
+      "variableName": "alertOppRegMustMeetMinimumQtys_action_1",
+      "message": "Opportunity Registrations must have at least 2 switches, 20 adapters, or 10 cables.",
+      "messageType": "error",
+      "targetType": "layout_element"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#alertOppRegMustMeetMinimumQtys",
+  "ruleGroups": [
+    "lineLevelRules"
+  ],
+  "category": "CUSTOM"
+}

@@ -1,0 +1,41 @@
+{
+  "created": "2025-04-02T20:49:30.603251Z",
+  "modified": "2026-08-18T21:36:14.554160Z",
+  "id": 5356,
+  "name": "Set Approval To True",
+  "variableName": "setApprovalToTrue",
+  "description": "Used for entry criteria of Approved stage",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.551291Z",
+      "modified": "2026-08-18T21:36:14.551291Z",
+      "id": 37465,
+      "fieldVariableName": "txn.custom.approved",
+      "scriptId": null,
+      "variableName": "setApprovalToTrue_action_1",
+      "values": [
+        "true"
+      ],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setApprovalToTrue",
+  "ruleGroups": [
+    "approvedStageEntryCriteria"
+  ],
+  "category": "CUSTOM"
+}

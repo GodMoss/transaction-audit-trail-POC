@@ -1,0 +1,36 @@
+{
+  "created": "2025-04-07T17:56:24.705549Z",
+  "modified": "2026-08-18T21:36:14.806797Z",
+  "id": 5377,
+  "name": "Overall Discount Approval Required Message",
+  "variableName": "overallDiscountApprovalRequiredMessage",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "script",
+    "customLogic": null,
+    "scriptId": 8363,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Message",
+      "created": "2026-08-18T21:36:14.804460Z",
+      "modified": "2026-08-18T21:36:14.804460Z",
+      "id": 37479,
+      "fieldVariableName": "txn.pricing.discount.percent",
+      "scriptId": 8364,
+      "variableName": "overallDiscountApprovalRequiredMessage_action_1",
+      "message": null,
+      "messageType": "warn",
+      "targetType": "field"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#overallDiscountApprovalRequiredMessage",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

@@ -1,0 +1,62 @@
+{
+  "created": "2026-08-18T20:21:37.990340Z",
+  "modified": "2026-08-18T20:21:37.990340Z",
+  "id": 12162,
+  "name": "Quote Number",
+  "variableName": "quoteNumber",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T20:21:37.992292Z",
+        "modified": "2026-08-18T20:21:37.992292Z",
+        "id": 48300,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.quoteName"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            ""
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T20:21:37.991444Z",
+      "modified": "2026-08-18T20:21:37.991444Z",
+      "id": 37022,
+      "fieldVariableName": "txn.custom.quoteName",
+      "scriptId": 8322,
+      "variableName": "quoteNumber_action_1",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#quoteNumber",
+  "ruleGroups": [],
+  "category": "CUSTOM"
+}

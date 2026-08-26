@@ -1,0 +1,64 @@
+{
+  "created": "2025-04-03T19:11:44.286859Z",
+  "modified": "2026-08-18T21:36:14.235236Z",
+  "id": 5361,
+  "name": "Add Creation Date To History",
+  "variableName": "addCreationDateToHistory",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "any",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.232877Z",
+        "modified": "2026-08-18T21:36:14.232877Z",
+        "id": 50499,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "boolean",
+          "value": [
+            "txn.custom.initialDraftStage"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "boolean",
+          "value": [
+            "true"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.231450Z",
+      "modified": "2026-08-18T21:36:14.231450Z",
+      "id": 37451,
+      "fieldVariableName": "txn.custom.approvalHistory",
+      "scriptId": 8345,
+      "variableName": "addCreationDateToHistory_action_1",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#addCreationDateToHistory",
+  "ruleGroups": [
+    "transactionHistory"
+  ],
+  "category": "CUSTOM"
+}

@@ -1,0 +1,37 @@
+{
+  "created": "2025-04-03T19:37:11.319753Z",
+  "modified": "2026-08-18T21:36:14.701334Z",
+  "id": 5363,
+  "name": "Set Timestamp",
+  "variableName": "setTimestamp",
+  "description": "",
+  "status": "inactive",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.698662Z",
+      "modified": "2026-08-18T21:36:14.698662Z",
+      "id": 37471,
+      "fieldVariableName": "txn.custom.timeStamp",
+      "scriptId": 8389,
+      "variableName": "setTimestamp_action_1",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setTimestamp",
+  "ruleGroups": [],
+  "category": "CUSTOM"
+}

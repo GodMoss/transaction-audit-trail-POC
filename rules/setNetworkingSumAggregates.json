@@ -1,0 +1,69 @@
+{
+  "created": "2026-02-26T06:07:52.266724Z",
+  "modified": "2026-08-18T21:36:14.720105Z",
+  "id": 6853,
+  "name": "Set Networking Sum Aggregates",
+  "variableName": "setNetworkingSumAggregates",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.716177Z",
+      "modified": "2026-08-18T21:36:14.716177Z",
+      "id": 37472,
+      "fieldVariableName": "txn.custom.nvSwitchSum",
+      "scriptId": 8377,
+      "variableName": "setNetworkingSumAggregates_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    },
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.717055Z",
+      "modified": "2026-08-18T21:36:14.717055Z",
+      "id": 37473,
+      "fieldVariableName": "txn.custom.nvCableSum",
+      "scriptId": 8378,
+      "variableName": "setNetworkingSumAggregates_action_2",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    },
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.717809Z",
+      "modified": "2026-08-18T21:36:14.717809Z",
+      "id": 37474,
+      "fieldVariableName": "txn.custom.nvAdapterSum",
+      "scriptId": 8379,
+      "variableName": "setNetworkingSumAggregates_action_3",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setNetworkingSumAggregates",
+  "ruleGroups": [
+    "lineLevelRules"
+  ],
+  "category": "CUSTOM"
+}

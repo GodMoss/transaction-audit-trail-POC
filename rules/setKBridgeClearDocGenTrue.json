@@ -1,0 +1,41 @@
+{
+  "created": "2025-06-06T21:22:53.500245Z",
+  "modified": "2026-08-18T21:36:14.193738Z",
+  "id": 5964,
+  "name": "Set kBridge Clear Doc Gen True",
+  "variableName": "setKBridgeClearDocGenTrue",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.191179Z",
+      "modified": "2026-08-18T21:36:14.191179Z",
+      "id": 37450,
+      "fieldVariableName": "txn.custom.clearKBridgeFields",
+      "scriptId": null,
+      "variableName": "setKBridgeClearDocGenTrue_action_1",
+      "values": [
+        "true"
+      ],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setKBridgeClearDocGenTrue",
+  "ruleGroups": [
+    "setkBridgeClearDocGenTrue"
+  ],
+  "category": "CUSTOM"
+}

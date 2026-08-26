@@ -1,0 +1,88 @@
+{
+  "created": "2025-04-08T18:56:51.672049Z",
+  "modified": "2026-08-18T21:36:14.669873Z",
+  "id": 5387,
+  "name": "Overall Percent Defines Amount",
+  "variableName": "overallPercentDefinesAmount",
+  "description": "Uses Overall Discount Percent to calculate Overall Discount Amount",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.665443Z",
+        "modified": "2026-08-18T21:36:14.665443Z",
+        "id": 50508,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.discountInputFormatTransactionLevel"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "Percent"
+          ],
+          "additionalPath": null
+        }
+      },
+      {
+        "created": "2026-08-18T21:36:14.666770Z",
+        "modified": "2026-08-18T21:36:14.666770Z",
+        "id": 50509,
+        "index": 2,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.discountingMethod"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "Transaction Level Discounting"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.663778Z",
+      "modified": "2026-08-18T21:36:14.663778Z",
+      "id": 37470,
+      "fieldVariableName": "txn.pricing.discount.amount",
+      "scriptId": 8365,
+      "variableName": "overallPercentDefinesAmount_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#overallPercentDefinesAmount",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

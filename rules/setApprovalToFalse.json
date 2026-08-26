@@ -1,0 +1,41 @@
+{
+  "created": "2025-04-02T20:49:51.188775Z",
+  "modified": "2026-08-18T21:36:14.485963Z",
+  "id": 5357,
+  "name": "Set Approval To False",
+  "variableName": "setApprovalToFalse",
+  "description": "Used for entry criteria of Pending Approval stage",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.483920Z",
+      "modified": "2026-08-18T21:36:14.483920Z",
+      "id": 37462,
+      "fieldVariableName": "txn.custom.approved",
+      "scriptId": null,
+      "variableName": "setApprovalToFalse_action_1",
+      "values": [
+        "false"
+      ],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setApprovalToFalse",
+  "ruleGroups": [
+    "pendingStageEntryCriteria"
+  ],
+  "category": "CUSTOM"
+}

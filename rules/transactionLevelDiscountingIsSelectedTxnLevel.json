@@ -1,0 +1,61 @@
+{
+  "created": "2025-04-08T18:37:49.626311Z",
+  "modified": "2026-08-18T21:36:14.972797Z",
+  "id": 5386,
+  "name": "Transaction Level Discounting is selected (txn level)",
+  "variableName": "transactionLevelDiscountingIsSelectedTxnLevel",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "any",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.969357Z",
+        "modified": "2026-08-18T21:36:14.969357Z",
+        "id": 50513,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.discountingMethod"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "Transaction Level Discounting"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Message",
+      "created": "2026-08-18T21:36:14.967748Z",
+      "modified": "2026-08-18T21:36:14.967748Z",
+      "id": 37484,
+      "fieldVariableName": "txn.custom.discountingMethod",
+      "scriptId": null,
+      "variableName": "transactionLevelDiscountingIsSelectedTxnLevel_action_1",
+      "message": "Transaction level discounting applies the same discount to all transaction lines. ",
+      "messageType": "info",
+      "targetType": "field"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#transactionLevelDiscountingIsSelectedTxnLevel",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

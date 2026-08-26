@@ -1,0 +1,39 @@
+{
+  "created": "2025-04-18T21:05:29.425066Z",
+  "modified": "2026-08-18T21:36:14.775300Z",
+  "id": 5613,
+  "name": "Set Markdown Example",
+  "variableName": "setMarkdownExample",
+  "description": "Set markdown example message in Approved stage layout",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.773049Z",
+      "modified": "2026-08-18T21:36:14.773049Z",
+      "id": 37477,
+      "fieldVariableName": "txn.custom.markdownExample",
+      "scriptId": 8375,
+      "variableName": "setMarkdownExample_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setMarkdownExample",
+  "ruleGroups": [
+    "setMarkdownExample"
+  ],
+  "category": "CUSTOM"
+}

@@ -1,0 +1,36 @@
+{
+  "created": "2025-06-10T20:46:03.884451Z",
+  "modified": "2026-08-18T21:36:14.862034Z",
+  "id": 5973,
+  "name": "Example Tooltip Message",
+  "variableName": "exampleTooltipMessage",
+  "description": "",
+  "status": "inactive",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Message",
+      "created": "2026-08-18T21:36:14.859114Z",
+      "modified": "2026-08-18T21:36:14.859114Z",
+      "id": 37481,
+      "fieldVariableName": "txn.custom.accountName",
+      "scriptId": null,
+      "variableName": "exampleTooltipMessage_action_1",
+      "message": "This is a tooltip message!",
+      "messageType": "info",
+      "targetType": "field"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#exampleTooltipMessage",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

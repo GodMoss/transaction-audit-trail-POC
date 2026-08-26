@@ -1,0 +1,39 @@
+{
+  "created": "2025-04-03T17:57:07.794476Z",
+  "modified": "2026-08-18T21:36:14.458324Z",
+  "id": 5358,
+  "name": "Assess if approval is required",
+  "variableName": "assessIfApprovalIsRequired",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.455998Z",
+      "modified": "2026-08-18T21:36:14.455998Z",
+      "id": 37460,
+      "fieldVariableName": "txn.custom.approvalRequired",
+      "scriptId": 8348,
+      "variableName": "assessIfApprovalIsRequired_action_1",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#assessIfApprovalIsRequired",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

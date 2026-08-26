@@ -1,0 +1,37 @@
+{
+  "created": "2025-02-26T14:34:17.223351Z",
+  "modified": "2026-08-18T21:36:14.570630Z",
+  "id": 415,
+  "name": "Sum Total Price",
+  "variableName": "sumTotalPrice",
+  "description": "",
+  "status": "inactive",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.568027Z",
+      "modified": "2026-08-18T21:36:14.568027Z",
+      "id": 37466,
+      "fieldVariableName": "txn.pricing.total",
+      "scriptId": 8392,
+      "variableName": "sumTotalPrice_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#sumTotalPrice",
+  "ruleGroups": [],
+  "category": "CUSTOM"
+}

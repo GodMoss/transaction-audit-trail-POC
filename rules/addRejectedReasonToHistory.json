@@ -1,0 +1,88 @@
+{
+  "created": "2025-04-04T18:43:44.660598Z",
+  "modified": "2026-08-26T04:18:38.304395Z",
+  "id": 5373,
+  "name": "Add Rejected Reason To History",
+  "variableName": "addRejectedReasonToHistory",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.902292Z",
+        "modified": "2026-08-18T21:36:14.902292Z",
+        "id": 50511,
+        "index": 1,
+        "op": "not equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.rejectedReason"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            ""
+          ],
+          "additionalPath": null
+        }
+      },
+      {
+        "created": "2026-08-18T21:36:14.903671Z",
+        "modified": "2026-08-18T21:36:14.903671Z",
+        "id": 50512,
+        "index": 2,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.stage"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "rejected"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.900889Z",
+      "modified": "2026-08-18T21:36:14.900889Z",
+      "id": 37482,
+      "fieldVariableName": "txn.custom.approvalHistory",
+      "scriptId": 8346,
+      "variableName": "addRejectedReasonToHistory_action_1",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#addRejectedReasonToHistory",
+  "ruleGroups": [
+    "addRejectionToHistory"
+  ],
+  "category": "CUSTOM"
+}

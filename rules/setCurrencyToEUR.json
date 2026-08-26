@@ -1,0 +1,41 @@
+{
+  "created": "2025-08-04T18:31:23.698006Z",
+  "modified": "2026-08-18T21:36:14.406816Z",
+  "id": 6125,
+  "name": "Set Currency to EUR",
+  "variableName": "setCurrencyToEUR",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.404090Z",
+      "modified": "2026-08-18T21:36:14.404090Z",
+      "id": 37457,
+      "fieldVariableName": "txn.pricing.currencyCode",
+      "scriptId": null,
+      "variableName": "setCurrencyToEUR_action_1",
+      "values": [
+        "EUR"
+      ],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setCurrencyToEUR",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

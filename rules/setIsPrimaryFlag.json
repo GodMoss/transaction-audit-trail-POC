@@ -1,0 +1,39 @@
+{
+  "created": "2025-04-08T18:32:14.715125Z",
+  "modified": "2026-08-18T21:36:14.536797Z",
+  "id": 5384,
+  "name": "Set Is Primary Flag",
+  "variableName": "setIsPrimaryFlag",
+  "description": "Returns true if Primary Transaction Id matches Record Id and triggers Primary box check on the UI ",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.534252Z",
+      "modified": "2026-08-18T21:36:14.534252Z",
+      "id": 37464,
+      "fieldVariableName": "txn.custom.primary",
+      "scriptId": 8373,
+      "variableName": "setIsPrimaryFlag_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setIsPrimaryFlag",
+  "ruleGroups": [
+    "setIsPrimaryFlag"
+  ],
+  "category": "CUSTOM"
+}

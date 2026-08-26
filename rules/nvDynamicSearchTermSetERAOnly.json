@@ -1,0 +1,41 @@
+{
+  "created": "2026-03-04T03:46:36.583208Z",
+  "modified": "2026-08-18T21:36:14.370191Z",
+  "id": 6862,
+  "name": "nvDynamicSearchTermSetERAOnly",
+  "variableName": "nvDynamicSearchTermSetERAOnly",
+  "description": "NVIDIA - button rule to set ERA Only ",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.367363Z",
+      "modified": "2026-08-18T21:36:14.367363Z",
+      "id": 37455,
+      "fieldVariableName": "txn.custom.nvDynamicSearchFilterTerm",
+      "scriptId": null,
+      "variableName": "nvDynamicSearchTermSetERAOnly_action_1",
+      "values": [
+        "eraOnly"
+      ],
+      "setReadOnly": false,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#nvDynamicSearchTermSetERAOnly",
+  "ruleGroups": [
+    "nvDynamicSearchTermSetERAOnly"
+  ],
+  "category": "CUSTOM"
+}

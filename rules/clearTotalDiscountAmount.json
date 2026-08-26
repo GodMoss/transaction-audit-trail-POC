@@ -1,0 +1,64 @@
+{
+  "created": "2025-04-25T19:04:53.197864Z",
+  "modified": "2026-08-26T04:18:52.239525Z",
+  "id": 5625,
+  "name": "Clear Total Discount Amount",
+  "variableName": "clearTotalDiscountAmount",
+  "description": "Ensures Overall Discount Amount field is cleared if the transaction total is 0...",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-26T04:18:52.213498Z",
+        "modified": "2026-08-26T04:18:52.213498Z",
+        "id": 51053,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "number",
+          "value": [
+            "txn.pricing.total"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "number",
+          "value": [
+            "0"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.211046Z",
+      "modified": "2026-08-26T04:18:52.239590Z",
+      "id": 37495,
+      "fieldVariableName": "txn.pricing.discount.amount",
+      "scriptId": null,
+      "variableName": "clearTotalDiscountAmount_action_1",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#clearTotalDiscountAmount",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

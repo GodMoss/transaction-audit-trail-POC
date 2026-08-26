@@ -1,0 +1,64 @@
+{
+  "created": "2025-04-04T19:11:02.019663Z",
+  "modified": "2026-08-18T21:36:14.517303Z",
+  "id": 5374,
+  "name": "Clear Rejected Reason If Stage Is Not Rejected",
+  "variableName": "clearRejectedReasonIfStageIsNotRejected",
+  "description": "This clears the rejected reason field allowing for it to be populated again",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.515237Z",
+        "modified": "2026-08-18T21:36:14.515237Z",
+        "id": 50506,
+        "index": 1,
+        "op": "not equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.stage"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "rejected"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.514070Z",
+      "modified": "2026-08-18T21:36:14.514070Z",
+      "id": 37463,
+      "fieldVariableName": "txn.custom.rejectedReason",
+      "scriptId": null,
+      "variableName": "clearRejectedReasonIfStageIsNotRejected_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#clearRejectedReasonIfStageIsNotRejected",
+  "ruleGroups": [
+    "transactionHistory"
+  ],
+  "category": "CUSTOM"
+}

@@ -1,0 +1,39 @@
+{
+  "created": "2025-04-03T21:28:10.882317Z",
+  "modified": "2026-08-18T21:36:14.792010Z",
+  "id": 5369,
+  "name": "Calculate Transaction Total",
+  "variableName": "calculateTransactionTotal",
+  "description": "Ensures parent roll-up values are included, and child line values are not duplicately included, in the calculation",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.789834Z",
+      "modified": "2026-08-18T21:36:14.789834Z",
+      "id": 37478,
+      "fieldVariableName": "txn.pricing.total",
+      "scriptId": 8349,
+      "variableName": "calculateTransactionTotal_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#calculateTransactionTotal",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

@@ -1,0 +1,37 @@
+{
+  "created": "2025-02-26T14:34:17.199262Z",
+  "modified": "2026-08-18T21:36:14.740153Z",
+  "id": 414,
+  "name": "Sum Total Subtotal",
+  "variableName": "sumTotalSubtotal",
+  "description": "A sample rule that sums of only visible rows, not all rows",
+  "status": "inactive",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.737497Z",
+      "modified": "2026-08-18T21:36:14.737497Z",
+      "id": 37475,
+      "fieldVariableName": "txn.pricing.subTotal",
+      "scriptId": 8393,
+      "variableName": "sumTotalSubtotal_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#sumTotalSubtotal",
+  "ruleGroups": [],
+  "category": "CUSTOM"
+}

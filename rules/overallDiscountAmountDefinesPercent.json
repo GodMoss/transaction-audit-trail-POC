@@ -1,0 +1,112 @@
+{
+  "created": "2025-04-08T19:07:33.436448Z",
+  "modified": "2026-08-18T21:36:15.177441Z",
+  "id": 5388,
+  "name": "Overall Discount Amount Defines Percent",
+  "variableName": "overallDiscountAmountDefinesPercent",
+  "description": "Uses Overall Discount Amount to calculate Overall Discount Percent ",
+  "status": "active",
+  "condition": {
+    "groupingType": "custom",
+    "customLogic": "(1 and 2) or 3",
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:15.172718Z",
+        "modified": "2026-08-18T21:36:15.172718Z",
+        "id": 50516,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.discountInputFormatTransactionLevel"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "Currency"
+          ],
+          "additionalPath": null
+        }
+      },
+      {
+        "created": "2026-08-18T21:36:15.174046Z",
+        "modified": "2026-08-18T21:36:15.174046Z",
+        "id": 50517,
+        "index": 2,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.discountingMethod"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "Transaction Level Discounting"
+          ],
+          "additionalPath": null
+        }
+      },
+      {
+        "created": "2026-08-18T21:36:15.174949Z",
+        "modified": "2026-08-18T21:36:15.174949Z",
+        "id": 50518,
+        "index": 3,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.discountingMethod"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "Line Level Discounting"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.171629Z",
+      "modified": "2026-08-18T21:36:15.171629Z",
+      "id": 37494,
+      "fieldVariableName": "txn.pricing.discount.percent",
+      "scriptId": 8362,
+      "variableName": "overallDiscountAmountDefinesPercent_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#overallDiscountAmountDefinesPercent",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

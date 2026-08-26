@@ -1,0 +1,41 @@
+{
+  "created": "2026-03-05T06:09:36.652209Z",
+  "modified": "2026-08-18T21:36:14.470523Z",
+  "id": 6888,
+  "name": "nvDynamicSearchTermSetNetworkingOnly",
+  "variableName": "nvDynamicSearchTermSetNetworkingOnly",
+  "description": "NVIDIA - button rule to set search term",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.468723Z",
+      "modified": "2026-08-18T21:36:14.468723Z",
+      "id": 37461,
+      "fieldVariableName": "txn.custom.nvDynamicSearchFilterTerm",
+      "scriptId": null,
+      "variableName": "nvDynamicSearchTermSetNetworkingOnly_action_1",
+      "values": [
+        "networkingOnly"
+      ],
+      "setReadOnly": false,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#nvDynamicSearchTermSetNetworkingOnly",
+  "ruleGroups": [
+    "nvDynamicSearchTermSetNetworkingOnly"
+  ],
+  "category": "CUSTOM"
+}

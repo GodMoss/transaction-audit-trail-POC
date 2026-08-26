@@ -1,0 +1,41 @@
+{
+  "created": "2026-03-05T06:41:02.679445Z",
+  "modified": "2026-08-18T21:36:14.443337Z",
+  "id": 6892,
+  "name": "nvDynamicSearchSetPartsOnly",
+  "variableName": "nvDynamicSearchSetPartsOnly",
+  "description": "NVIDIA - button rule to set search terms",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.441365Z",
+      "modified": "2026-08-18T21:36:14.441365Z",
+      "id": 37459,
+      "fieldVariableName": "txn.custom.nvDynamicSearchFilterTerm",
+      "scriptId": null,
+      "variableName": "nvDynamicSearchSetPartsOnly_action_1",
+      "values": [
+        "partsOnly"
+      ],
+      "setReadOnly": false,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#nvDynamicSearchSetPartsOnly",
+  "ruleGroups": [
+    "nvDynamicSearchSetPartsOnly"
+  ],
+  "category": "CUSTOM"
+}

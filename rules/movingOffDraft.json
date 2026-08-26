@@ -1,0 +1,42 @@
+{
+  "created": "2025-04-03T19:07:29.965806Z",
+  "modified": "2026-08-18T21:36:14.931745Z",
+  "id": 5360,
+  "name": "Initial Move Off Draft Stage",
+  "variableName": "movingOffDraft",
+  "description": "Sets the field txn.custom.initialDraftStage to false, so that Transaction History \"Transaction created by...\" line only occurs once",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.929347Z",
+      "modified": "2026-08-18T21:36:14.929347Z",
+      "id": 37483,
+      "fieldVariableName": "txn.custom.initialDraftStage",
+      "scriptId": null,
+      "variableName": "movingOffDraft_action_1",
+      "values": [
+        "false"
+      ],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#movingOffDraft",
+  "ruleGroups": [
+    "moveOffDraft",
+    "transactionHistory"
+  ],
+  "category": "CUSTOM"
+}

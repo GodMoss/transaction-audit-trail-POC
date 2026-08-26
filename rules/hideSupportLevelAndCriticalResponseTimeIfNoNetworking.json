@@ -1,0 +1,69 @@
+{
+  "created": "2026-02-26T06:30:20.597271Z",
+  "modified": "2026-08-18T21:36:14.605736Z",
+  "id": 6855,
+  "name": "Hide Support Level and Critical Response Time if No Networking",
+  "variableName": "hideSupportLevelAndCriticalResponseTimeIfNoNetworking",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.603218Z",
+        "modified": "2026-08-18T21:36:14.603218Z",
+        "id": 50507,
+        "index": 1,
+        "op": "does not contain",
+        "lhs": {
+          "field": true,
+          "dataType": "array",
+          "value": [
+            "txn.custom.nvAvailableCompetencies"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "array",
+          "value": [
+            "Networking"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Visibility",
+      "created": "2026-08-18T21:36:14.600527Z",
+      "modified": "2026-08-18T21:36:14.600527Z",
+      "id": 37467,
+      "fieldVariableName": "txn.custom.nvSupportLevel",
+      "scriptId": null,
+      "variableName": "hideSupportLevelAndCriticalResponseTimeIfNoNetworking_action_1",
+      "visibilityType": "hide"
+    },
+    {
+      "type": "Visibility",
+      "created": "2026-08-18T21:36:14.602315Z",
+      "modified": "2026-08-18T21:36:14.602315Z",
+      "id": 37468,
+      "fieldVariableName": "txn.custom.nvCriticalResponse",
+      "scriptId": null,
+      "variableName": "hideSupportLevelAndCriticalResponseTimeIfNoNetworking_action_2",
+      "visibilityType": "hide"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#hideSupportLevelAndCriticalResponseTimeIfNoNetworking",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

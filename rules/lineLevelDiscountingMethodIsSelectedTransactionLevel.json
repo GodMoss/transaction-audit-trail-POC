@@ -1,0 +1,86 @@
+{
+  "created": "2025-04-08T19:48:25.284792Z",
+  "modified": "2026-08-18T21:36:15.021487Z",
+  "id": 5390,
+  "name": "Line Level Discounting Method Is Selected (Transaction Level)",
+  "variableName": "lineLevelDiscountingMethodIsSelectedTransactionLevel",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "any",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:15.018679Z",
+        "modified": "2026-08-18T21:36:15.018679Z",
+        "id": 50514,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.discountingMethod"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "Line Level Discounting"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.014806Z",
+      "modified": "2026-08-18T21:36:15.014806Z",
+      "id": 37485,
+      "fieldVariableName": "txn.pricing.discount.amount",
+      "scriptId": 8358,
+      "variableName": "lineLevelDiscountingMethodIsSelectedTransactionLevel_action_2",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    },
+    {
+      "type": "Visibility",
+      "created": "2026-08-18T21:36:15.016279Z",
+      "modified": "2026-08-18T21:36:15.016279Z",
+      "id": 37486,
+      "fieldVariableName": "txn.custom.discountInputFormatTransactionLevel",
+      "scriptId": null,
+      "variableName": "lineLevelDiscountingMethodIsSelectedTransactionLevel_action_3",
+      "visibilityType": "hide"
+    },
+    {
+      "type": "Message",
+      "created": "2026-08-18T21:36:15.017429Z",
+      "modified": "2026-08-18T21:36:15.017429Z",
+      "id": 37487,
+      "fieldVariableName": "txn.custom.discountingMethod",
+      "scriptId": null,
+      "variableName": "lineLevelDiscountingMethodIsSelectedTransactionLevel_action_1",
+      "message": "Line level discounting enables editing of each transaction line discount. The line level discounts are summed across the entire transaction, and an overall percentage is calculated. ",
+      "messageType": "info",
+      "targetType": "field"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#lineLevelDiscountingMethodIsSelectedTransactionLevel",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

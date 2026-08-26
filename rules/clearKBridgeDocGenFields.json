@@ -1,0 +1,139 @@
+{
+  "created": "2025-06-06T21:15:57.943806Z",
+  "modified": "2026-08-18T21:36:15.132780Z",
+  "id": 5963,
+  "name": "Clear kBridge Doc Gen fields",
+  "variableName": "clearKBridgeDocGenFields",
+  "description": "Clears all fields used for previous doc gen when new kBridge session is initialized",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:15.129669Z",
+        "modified": "2026-08-18T21:36:15.129669Z",
+        "id": 50515,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "boolean",
+          "value": [
+            "txn.custom.clearKBridgeFields"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "boolean",
+          "value": [
+            "true"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.122514Z",
+      "modified": "2026-08-18T21:36:15.122514Z",
+      "id": 37488,
+      "fieldVariableName": "txn.custom.kBridgeSessionId",
+      "scriptId": null,
+      "variableName": "clearKBridgeDocGenFields_action_1",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    },
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.124036Z",
+      "modified": "2026-08-18T21:36:15.124036Z",
+      "id": 37489,
+      "fieldVariableName": "txn.custom.kBridgeUpdateBodySuccessful",
+      "scriptId": null,
+      "variableName": "clearKBridgeDocGenFields_action_2",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    },
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.125049Z",
+      "modified": "2026-08-18T21:36:15.125049Z",
+      "id": 37490,
+      "fieldVariableName": "txn.custom.kBridgeResultURL",
+      "scriptId": null,
+      "variableName": "clearKBridgeDocGenFields_action_5",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    },
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.126048Z",
+      "modified": "2026-08-18T21:36:15.126048Z",
+      "id": 37491,
+      "fieldVariableName": "txn.custom.kBridgeUpdateUISuccessful",
+      "scriptId": null,
+      "variableName": "clearKBridgeDocGenFields_action_3",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    },
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.127237Z",
+      "modified": "2026-08-18T21:36:15.127237Z",
+      "id": 37492,
+      "fieldVariableName": "txn.custom.kBridgePostEvaluateSuccessful",
+      "scriptId": null,
+      "variableName": "clearKBridgeDocGenFields_action_4",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    },
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:15.128495Z",
+      "modified": "2026-08-18T21:36:15.128495Z",
+      "id": 37493,
+      "fieldVariableName": "txn.custom.kBridgeSessionEnd",
+      "scriptId": null,
+      "variableName": "clearKBridgeDocGenFields_action_6",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#clearKBridgeDocGenFields",
+  "ruleGroups": [
+    "clearkBridgeFields"
+  ],
+  "category": "CUSTOM"
+}

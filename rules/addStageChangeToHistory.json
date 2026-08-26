@@ -1,0 +1,89 @@
+{
+  "created": "2025-04-03T19:31:35.614881Z",
+  "modified": "2026-08-18T21:36:14.275282Z",
+  "id": 5362,
+  "name": "Add Stage Change To History",
+  "variableName": "addStageChangeToHistory",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.271383Z",
+        "modified": "2026-08-18T21:36:14.271383Z",
+        "id": 50500,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "boolean",
+          "value": [
+            "txn.custom.initialDraftStage"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "boolean",
+          "value": [
+            "false"
+          ],
+          "additionalPath": null
+        }
+      },
+      {
+        "created": "2026-08-18T21:36:14.272768Z",
+        "modified": "2026-08-18T21:36:14.272768Z",
+        "id": 50501,
+        "index": 2,
+        "op": "not equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.stage"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            ""
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.269666Z",
+      "modified": "2026-08-18T21:36:14.269666Z",
+      "id": 37452,
+      "fieldVariableName": "txn.custom.approvalHistory",
+      "scriptId": 8347,
+      "variableName": "addStageChangeToHistory_action_1",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": false,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#addStageChangeToHistory",
+  "ruleGroups": [
+    "addStageChangeToHistory",
+    "transactionHistory"
+  ],
+  "category": "CUSTOM"
+}

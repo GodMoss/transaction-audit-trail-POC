@@ -1,0 +1,65 @@
+{
+  "created": "2025-04-23T16:42:21.267534Z",
+  "modified": "2026-08-18T21:36:14.838430Z",
+  "id": 5619,
+  "name": "Rejected Reason Message",
+  "variableName": "rejectedReasonMessage",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "all",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-08-18T21:36:14.835223Z",
+        "modified": "2026-08-18T21:36:14.835223Z",
+        "id": 50510,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.stage"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "rejected"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Message",
+      "created": "2026-08-18T21:36:14.833576Z",
+      "modified": "2026-08-18T21:36:14.833576Z",
+      "id": 37480,
+      "fieldVariableName": "txn.custom.rejectedReason",
+      "scriptId": null,
+      "variableName": "rejectedReasonMessage_action_1",
+      "message": "Enter comments to enable Revise Proposal",
+      "messageType": "custom",
+      "color": "#0176d3",
+      "icon": "info",
+      "preventSave": false,
+      "targetType": "field"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#rejectedReasonMessage",
+  "ruleGroups": [
+    "transactionHistory",
+    "rejectedstagerules"
+  ],
+  "category": "CUSTOM"
+}

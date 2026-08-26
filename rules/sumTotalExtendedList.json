@@ -1,0 +1,39 @@
+{
+  "created": "2025-03-31T19:44:57.755998Z",
+  "modified": "2026-08-18T21:36:14.758235Z",
+  "id": 535,
+  "name": "Sum Total Extended List",
+  "variableName": "sumTotalExtendedList",
+  "description": "A sample rule that sums of only visible rows, not all rows",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-08-18T21:36:14.755491Z",
+      "modified": "2026-08-18T21:36:14.755491Z",
+      "id": 37476,
+      "fieldVariableName": "txn.custom.listTotal",
+      "scriptId": 8391,
+      "variableName": "sumTotalExtendedList_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#sumTotalExtendedList",
+  "ruleGroups": [
+    "aggregatesAndRollups"
+  ],
+  "category": "CUSTOM"
+}
