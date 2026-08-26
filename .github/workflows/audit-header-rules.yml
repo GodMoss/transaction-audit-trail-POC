@@ -28,7 +28,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update header rule snapshots"
+            git commit -F commit-message.txt
+
             git push
           fi
 
