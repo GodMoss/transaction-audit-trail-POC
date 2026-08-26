@@ -49,6 +49,16 @@ async function main() {
     fs.writeFileSync(filePath, JSON.stringify(detail, null, 2) + '\n');
     console.log(` - wrote ${filePath} (modified ${rule.modified}, by ${rule.lastModifiedBy})`);
   }
+  
+  const commitMessagePath = path.join(__dirname, '..', 'commit-message.txt');
+  if (changed.length > 0) {
+    const lines = [`Update ${changed.length} header rule(s)`, ''];
+    changed.forEach(r => {
+      lines.push(`- ${r.variableName} modified by ${r.lastModifiedBy} at ${r.modified}`);
+    });
+    fs.writeFileSync(commitMessagePath, lines.join('\n') + '\n');
+  }
+
   if (rules.length > 0) {
     const newWatermark = rules[0].modified; // list is DESC-sorted, so this is the newest
     fs.writeFileSync(WATERMARK_PATH, JSON.stringify({ lastModified: newWatermark }, null, 2) + '\n');
