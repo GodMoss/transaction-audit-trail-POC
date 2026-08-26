@@ -19,5 +19,17 @@ jobs:
         env:
           LOGIK_ADMIN_API_KEY: ${{ secrets.LOGIK_ADMIN_API_KEY }}
         run: node scripts/audit-header-rules.js
+        
+      - name: Commit and push snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rules/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update header rule snapshots"
+            git push
+          fi
 
 
