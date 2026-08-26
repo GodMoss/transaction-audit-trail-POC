@@ -2,41 +2,53 @@ const fs = require('fs');
 const path = require('path');
 
 const WATERMARK_PATH = path.join(__dirname, '..', 'state', 'header-rules-watermark.json');
+const RULES_DIR = path.join(__dirname, '..', 'rules');
 const RULES_LIST_URL = 'https://es-test.test.logik.io/api/txn-header/v2/blueprints/default/rules?page=0&size=100&sort=modified%2CDESC';
+const RULE_DETAIL_URL = (variableName) => `https://es-test.test.logik.io/api/txn-header/v3/rules/${variableName}`;
 
 async function main() {
   const apiKey = process.env.LOGIK_ADMIN_API_KEY;
+  const authHeaders = {
+    Authorization: `Bearer ${apiKey}`,
+    Accept: 'application/json',
+  };
 
   const watermarkState = JSON.parse(fs.readFileSync(WATERMARK_PATH, 'utf8'));
   const lastWatermark = new Date(watermarkState.lastModified);
   console.log('Current watermark:', lastWatermark.toISOString());
 
-  const response = await fetch(RULES_LIST_URL, {
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      Accept: 'application/json',
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Rules list fetch failed: ${response.status}`);
+  const listResponse = await fetch(RULES_LIST_URL, { headers: authHeaders });
+  if (!listResponse.ok) {
+    throw new Error(`Rules list fetch failed: ${listResponse.status}`);
   }
-
-  const data = await response.json();
-  const rules = data.content || [];
+  const listData = await listResponse.json();
+  const rules = listData.content || [];
 
   const changed = [];
   for (const rule of rules) {
     const modified = new Date(rule.modified);
     if (modified <= lastWatermark) {
-      // List is sorted DESC by modified - once we hit one this old, everything after is too.
       break;
     }
     changed.push(rule);
   }
 
-  console.log(`Found ${changed.length} changed/new rule(s) since last watermark:`);
-  changed.forEach(r => console.log(` - ${r.variableName} (modified ${r.modified}, by ${r.lastModifiedBy})`));
+  console.log(`Found ${changed.length} changed/new rule(s) since last watermark.`);
+
+  fs.mkdirSync(RULES_DIR, { recursive: true });
+
+  for (const rule of changed) {
+    const detailResponse = await fetch(RULE_DETAIL_URL(rule.variableName), { headers: authHeaders });
+    if (!detailResponse.ok) {
+      console.error(`  Failed to fetch detail for ${rule.variableName}: ${detailResponse.status}`);
+      continue;
+    }
+    const detail = await detailResponse.json();
+
+    const filePath = path.join(RULES_DIR, `${rule.variableName}.json`);
+    fs.writeFileSync(filePath, JSON.stringify(detail, null, 2) + '\n');
+    console.log(` - wrote ${filePath} (modified ${rule.modified}, by ${rule.lastModifiedBy})`);
+  }
 }
 
 main().catch(err => {
