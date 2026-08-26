@@ -15,34 +15,7 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Fetch header rules list
+      - name: Run header rules audit
         env:
           LOGIK_ADMIN_API_KEY: ${{ secrets.LOGIK_ADMIN_API_KEY }}
-        run: |
-          node -e '
-            fetch("https://es-test.test.logik.io/api/txn-header/v2/blueprints/default/rules?page=0&size=100&sort=modified%2CDESC", {
-              headers: {
-                "Authorization": `Bearer ${process.env.LOGIK_ADMIN_API_KEY}`,
-                "Accept": "application/json"
-              }
-            })
-              .then(res => res.json())
-              .then(data => console.log(JSON.stringify(data, null, 2)))
-              .catch(err => { console.error(err); process.exit(1); });
-          '
-      - name: Fetch single rule detail
-        env:
-          LOGIK_ADMIN_API_KEY: ${{ secrets.LOGIK_ADMIN_API_KEY }}
-        run: |
-          node -e '
-            fetch("https://es-test.test.logik.io/api/txn-header/v3/rules/clearTotalDiscountAmount", {
-              headers: {
-                "Authorization": `Bearer ${process.env.LOGIK_ADMIN_API_KEY}`,
-                "Accept": "application/json"
-              }
-            })
-              .then(res => res.json())
-              .then(data => console.log(JSON.stringify(data, null, 2)))
-              .catch(err => { console.error(err); process.exit(1); });
-          '
-
+        run: node scripts/audit-header-rules.js
