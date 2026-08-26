@@ -30,3 +30,19 @@ jobs:
               .then(data => console.log(JSON.stringify(data, null, 2)))
               .catch(err => { console.error(err); process.exit(1); });
           '
+      - name: Fetch single rule detail
+        env:
+          LOGIK_ADMIN_API_KEY: ${{ secrets.LOGIK_ADMIN_API_KEY }}
+        run: |
+          node -e '
+            fetch("https://es-test.test.logik.io/api/txn-header/v3/rules/clearTotalDiscountAmount", {
+              headers: {
+                "Authorization": `Bearer ${process.env.LOGIK_ADMIN_API_KEY}`,
+                "Accept": "application/json"
+              }
+            })
+              .then(res => res.json())
+              .then(data => console.log(JSON.stringify(data, null, 2)))
+              .catch(err => { console.error(err); process.exit(1); });
+          '
+
