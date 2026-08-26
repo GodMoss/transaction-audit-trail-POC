@@ -19,11 +19,5 @@ jobs:
         env:
           LOGIK_ADMIN_API_KEY: ${{ secrets.LOGIK_ADMIN_API_KEY }}
         run: node scripts/audit-header-rules.js
-      - name: Show what was written (temporary - for verification only)
-        run: |
-          echo "Files in rules/:"
-          ls -la rules/
-          echo "---"
-          echo "Example snapshot content:"
-          cat rules/clearTotalDiscountAmount.json
+
 
