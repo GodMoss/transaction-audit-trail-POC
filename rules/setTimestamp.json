@@ -26,7 +26,8 @@
       "overrideUserInput": false,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "var ts = Date.now();\r\ntsISO = ts.toISOString();\r\nconsole.log(ts);\r\nvar test3 = \"2025-01-11\";\r\nvar test4 = \"01-11-2025\";\r\n\r\nreturn ts;"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

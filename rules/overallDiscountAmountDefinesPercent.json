@@ -99,7 +99,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "if (txn.custom.listTotal == 0) {\r\n    return 0;\r\n}\r\n\r\nreturn (txn.pricing.discount.amount / txn.custom.listTotal) * 100;\r\n"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

@@ -75,7 +75,8 @@
       "overrideUserInput": false,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "// hello world, again!\r\nvar old = txn.custom.approvalHistory;\r\n\r\nvar timestamp = Date.now().toISOString();\r\nvar dateString = timestamp;\r\nvar year = dateString.substring(0, 4);\r\nvar month = dateString.substring(5, 7);\r\nvar day = dateString.substring(8, 10);\r\nvar formattedDate = month + \"/\" + day + \"/\" + year;\r\n\r\nvar rreason = \"\\n\" + formattedDate + \" Reason for rejection: \" + txn.custom.rejectedReason;\r\n\r\nreturn rreason + old;\r\n\r\n/*\r\n\r\n\r\n{\r\n\t\"txn\":{\r\n    \"stage\": \"draft\",\r\n    \"custom.approvalHistory\": \"This is the old\"\r\n  }\r\n}\r\n\r\n*/"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

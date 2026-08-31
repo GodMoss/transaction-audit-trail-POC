@@ -10,7 +10,8 @@
     "groupingType": "script",
     "customLogic": null,
     "scriptId": 8363,
-    "conditions": []
+    "conditions": [],
+    "scriptContent": "if (txn.pricing.discount.percent >= txn.custom.discountRequiringApproval){\n  return true;\n}\nreturn false;"
   },
   "actions": [
     {
@@ -23,7 +24,8 @@
       "variableName": "overallDiscountApprovalRequiredMessage_action_1",
       "message": null,
       "messageType": "warn",
-      "targetType": "field"
+      "targetType": "field",
+      "scriptContent": "return \"Discounts above \" + txn.custom.discountRequiringApproval + \"% require approval\";"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

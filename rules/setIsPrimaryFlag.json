@@ -26,7 +26,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "var primaryTxnId = txn.custom.opportunityPrimaryTransactionId;\nvar thisTxnId = txn.custom.salesforceRecordID;\nvar isThisPrimary = false;\nif (primaryTxnId == thisTxnId) {\n  isThisPrimary = true;\n}\n\nreturn isThisPrimary;\n\n/*\n{\n\t\"txn\": {\n\t    \"custom\": {\n\t\t      \"opportunityPrimaryTransactionId\": \"a4VVa000000Os0rMAC\",\n\t\t      \"salesforceRecordID\": \"a4VVa000000Os0rMAC\"\n\t\t    }\n\t  }\n}\n*/\n"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

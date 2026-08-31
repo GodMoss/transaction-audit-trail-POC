@@ -75,7 +75,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "\r\nreturn txn.custom.listTotal * (txn.pricing.discount.percent / 100);"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

@@ -51,7 +51,8 @@
       "overrideUserInput": false,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "var dateString = txn.created;\nvar year = dateString.substring(0, 4);\nvar month = dateString.substring(5, 7);\nvar day = dateString.substring(8, 10);\nvar formattedDate = month + \"/\" + day + \"/\" + year;\n\nreturn \"\\n\" + formattedDate + \" Transaction created by \" + txn.createdBy;"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

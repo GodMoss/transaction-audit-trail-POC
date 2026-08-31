@@ -51,7 +51,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "var discTotal = txn.custom.listTotal - txn.pricing.total;\r\nreturn discTotal;"
     },
     {
       "type": "Visibility",

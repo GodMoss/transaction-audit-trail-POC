@@ -26,7 +26,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "return txn.line.functions.sumFieldIf(txn.line.pricing.extendedNet, txn.line.isConfigured != true);"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

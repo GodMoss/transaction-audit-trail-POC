@@ -26,7 +26,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "var extListTotal = txn.line.functions.sumFieldIf(txn.line.pricing.extendedList, txn.line.isConfigured != true, 0);\r\nreturn extListTotal;"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

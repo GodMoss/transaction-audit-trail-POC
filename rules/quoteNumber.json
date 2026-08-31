@@ -51,7 +51,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "const timeInMilliSeconds = new Date().getTime(); /* How to get time in milliseconds */\r\nreturn \"Quote#\" + timeInMilliSeconds;"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

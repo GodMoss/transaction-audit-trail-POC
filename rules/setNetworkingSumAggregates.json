@@ -26,7 +26,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "return txn.line.functions.sumFieldIf(txn.line.quantity, txn.line.custom.nvProductGroup == 'Switch');"
     },
     {
       "type": "Determination",
@@ -41,7 +42,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "return txn.line.functions.sumFieldIf(txn.line.quantity, txn.line.custom.nvProductGroup == 'Cables');"
     },
     {
       "type": "Determination",
@@ -56,7 +58,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "return txn.line.functions.sumFieldIf(txn.line.quantity, txn.line.custom.nvProductGroup == 'Adapter');"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

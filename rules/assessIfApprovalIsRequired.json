@@ -26,7 +26,8 @@
       "overrideUserInput": false,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "if (txn.pricing.discount.percent >= txn.custom.discountRequiringApproval){\r\n  return true;\r\n}\r\n\r\nreturn false;"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

@@ -26,7 +26,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "//This example will add up the subtotal of only visible lines instead of all lines like the total example does\r\n//The 'If' at the end of txn.line.functions.sumFieldIf() is required for the conditional of 'txn.line.isVisible == true' to work.\r\n//Removing the 'If' and the conditional and the ',' before it will make it an normal aggregate rule \r\n//You can comment out the current two lines (9 & 10) and uncomment out the other two lines (6 & 7) to switch between a conditionanal and standard aggregate.\r\n\r\n//var subtotal = txn.line.functions.sumField(txn.line.pricing.extendedList);\r\n//return subtotal;\r\n\r\nvar visableSubtotal = txn.line.functions.sumFieldIf(txn.line.pricing.extendedList, txn.line.isVisible == true, 0);\r\nreturn visableSubtotal;"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

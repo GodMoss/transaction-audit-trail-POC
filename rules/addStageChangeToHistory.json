@@ -75,7 +75,8 @@
       "overrideUserInput": false,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "var old = txn.custom.approvalHistory;\r\n// console.log(old);\r\n\r\nvar stages = {\r\n  \"draft\": \"Draft\",\r\n  \"pendingApproval\": \"Pending Approval\",\r\n  \"rejected\": \"Rejected\",\r\n  \"approved\": \"Approved\",\r\n  \"sentToCustomer\": \"Sent to Customer\",\r\n  \"ordered\": \"Ordered\"\r\n};\r\n\r\nvar timestamp = Date.now().toISOString();\r\n// console.log(timestamp);\r\n\r\nvar dateString = timestamp;\r\nvar year = dateString.substring(0, 4);\r\nvar month = dateString.substring(5, 7);\r\nvar day = dateString.substring(8, 10);\r\nvar formattedDate = month + \"/\" + day + \"/\" + year;\r\n\r\nvar stageAdder = \"\\n\" + formattedDate + \" Transitioned to \";\r\n\r\nif (stages.has(txn.stage)){\r\n  var sLabel = stages.get(txn.stage);\r\n  stageAdder += sLabel + \" by \" + txn.modifiedBy;\r\n}\r\nelse{\r\n  stageAdder += txn.stage + \" by \" + txn.modifiedBy;\r\n}\r\n\r\n// Do not add to history if current stage is already added, prevents duplicate lines when a new user opens the transaction\r\nif (old && (old.substring(11, 30) == stageAdder.substring(11, 30))) {\r\n  return old;\r\n}\r\n\r\n// Only prepend if this entry isn't already the most recent entry, prevents duplicate lines when transitioning between stages\r\nif (old && old.trim().startsWith(stageAdder.trim())) {\r\n  return old;\r\n}\r\nreturn stageAdder + old;\r\n\r\n\r\n/*\r\n\r\n\r\n{\r\n\t\"txn\":{\r\n    \"stage\":\"draft\",\r\n    \"custom.approvalHistory\":\"This is the old\"\r\n  }\r\n}\r\n\r\n*/\r\n\r\n\r\n"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

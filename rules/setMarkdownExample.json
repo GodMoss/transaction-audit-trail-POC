@@ -26,7 +26,8 @@
       "overrideUserInput": true,
       "showMessage": false,
       "unionWithCurrentValue": false,
-      "clearValue": false
+      "clearValue": false,
+      "scriptContent": "return \"Include a link here, such as [View Document](\" + txn.custom.kBridgeResultURL + \")\";"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",
