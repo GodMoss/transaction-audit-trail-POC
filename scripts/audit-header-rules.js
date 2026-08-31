@@ -5,6 +5,36 @@ const WATERMARK_PATH = path.join(__dirname, '..', 'state', 'header-rules-waterma
 const RULES_DIR = path.join(__dirname, '..', 'rules');
 const RULES_LIST_URL = 'https://es-test.test.logik.io/api/txn-header/v2/blueprints/default/rules?page=0&size=100&sort=modified%2CDESC';
 const RULE_DETAIL_URL = (variableName) => `https://es-test.test.logik.io/api/txn-header/v3/rules/${variableName}`;
+const SCRIPT_URL = (scriptId) => `https://es-test.test.logik.io/api/admin/v1/scripts/${scriptId}`;
+
+async function attachScriptContent(rule, authHeaders) {
+  const scriptIds = new Set();
+  if (rule.condition && rule.condition.scriptId) scriptIds.add(rule.condition.scriptId);
+  (rule.actions || []).forEach(a => { if (a.scriptId) scriptIds.add(a.scriptId); });
+
+  if (scriptIds.size === 0) return;
+
+  const scriptContents = {};
+  for (const scriptId of scriptIds) {
+    const res = await fetch(SCRIPT_URL(scriptId), { headers: authHeaders });
+    if (!res.ok) {
+      console.error(`  Failed to fetch script ${scriptId}: ${res.status}`);
+      continue;
+    }
+    const scriptData = await res.json();
+    scriptContents[scriptId] = scriptData.content || '';
+  }
+
+  if (rule.condition && rule.condition.scriptId) {
+    rule.condition.scriptContent = scriptContents[rule.condition.scriptId];
+  }
+  (rule.actions || []).forEach(a => {
+    if (a.scriptId) {
+      a.scriptContent = scriptContents[a.scriptId];
+    }
+  });
+}
+
 
 async function main() {
   const apiKey = process.env.LOGIK_ADMIN_API_KEY;
@@ -44,6 +74,7 @@ async function main() {
       continue;
     }
     const detail = await detailResponse.json();
+    await attachScriptContent(detail, authHeaders);
 
     const filePath = path.join(RULES_DIR, `${rule.variableName}.json`);
     fs.writeFileSync(filePath, JSON.stringify(detail, null, 2) + '\n');
