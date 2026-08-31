@@ -5,7 +5,7 @@ const WATERMARK_PATH = path.join(__dirname, '..', 'state', 'header-rules-waterma
 const RULES_DIR = path.join(__dirname, '..', 'rules');
 const RULES_LIST_URL = 'https://es-test.test.logik.io/api/txn-header/v2/blueprints/default/rules?page=0&size=100&sort=modified%2CDESC';
 const RULE_DETAIL_URL = (variableName) => `https://es-test.test.logik.io/api/txn-header/v3/rules/${variableName}`;
-const SCRIPT_URL = (scriptId) => `https://es-test.test.logik.io/api/admin/v1/scripts/${scriptId}`;
+const SCRIPT_URL = (scriptId) => `https://es-test.test.logik.io/api/txn-header/v1/scripts/${scriptId}`;
 
 async function attachScriptContent(rule, authHeaders) {
   const scriptIds = new Set();
