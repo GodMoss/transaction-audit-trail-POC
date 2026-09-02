@@ -1,6 +1,6 @@
 {
   "created": "2025-02-26T14:34:17.223351Z",
-  "modified": "2026-08-31T19:58:53.144542Z",
+  "modified": "2026-09-02T15:54:48.208155Z",
   "id": 415,
   "name": "Sum Total Price",
   "variableName": "sumTotalPrice",
@@ -27,7 +27,7 @@
       "showMessage": false,
       "unionWithCurrentValue": false,
       "clearValue": false,
-      "scriptContent": "//This example will add up the total of all lines instead of only visible lines like the subtotal example does\r\n//Adding an 'If' at the end of txn.line.functions.sumField() and adding ', txn.line.isVisible == true' can turn it into a conditional aggregate instead of a standard one.\r\n//You can comment out the current two lines (5 & 6) and uncomment out the other two lines (8 & 9) to switch between a standard and conditional aggregate that only fires if the line is visible.\r\n\r\nvar total = txn.line.functions.sumField(txn.line.pricing.extendedNet);\r\nreturn 50;\r\n//return total;\r\n\r\n// var visableTotal = txn.line.functions.sumFieldIf(txn.line.pricing.extendedNet, txn.line.isVisible == true);\r\n// return visableTotal;"
+      "scriptContent": "//This example will add up the total of all lines instead of only visible lines like the subtotal example does\r\n//Adding an 'If' at the end of txn.line.functions.sumField() and adding ', txn.line.isVisible == true' can turn it into a conditional aggregate instead of a standard one.\r\n//You can comment out the current two lines (5 & 6) and uncomment out the other two lines (8 & 9) to switch between a standard and conditional aggregate that only fires if the line is visible.\r\n\r\nvar total = txn.line.functions.sumField(txn.line.pricing.extendedNet);\r\nreturn 100;\r\n//return total;\r\n\r\n// var visableTotal = txn.line.functions.sumFieldIf(txn.line.pricing.extendedNet, txn.line.isVisible == true);\r\n// return visableTotal;"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",
