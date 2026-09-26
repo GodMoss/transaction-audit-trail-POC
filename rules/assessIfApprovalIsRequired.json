@@ -1,8 +1,8 @@
 {
   "created": "2025-04-03T17:57:07.794476Z",
-  "modified": "2026-08-18T21:36:14.458324Z",
+  "modified": "2026-09-26T00:30:09.767273Z",
   "id": 5358,
-  "name": "Assess if approval is required",
+  "name": "Assess If Approval Is Required",
   "variableName": "assessIfApprovalIsRequired",
   "description": "",
   "status": "active",
@@ -15,11 +15,11 @@
   "actions": [
     {
       "type": "Determination",
-      "created": "2026-08-18T21:36:14.455998Z",
-      "modified": "2026-08-18T21:36:14.455998Z",
-      "id": 37460,
+      "created": "2026-09-26T00:30:09.765040Z",
+      "modified": "2026-09-26T00:30:09.765040Z",
+      "id": 47065,
       "fieldVariableName": "txn.custom.approvalRequired",
-      "scriptId": 8348,
+      "scriptId": 12315,
       "variableName": "assessIfApprovalIsRequired_action_1",
       "values": [],
       "setReadOnly": false,
@@ -27,7 +27,7 @@
       "showMessage": false,
       "unionWithCurrentValue": false,
       "clearValue": false,
-      "scriptContent": "if (txn.pricing.discount.percent >= txn.custom.discountRequiringApproval){\r\n  return true;\r\n}\r\n\r\nreturn false;"
+      "scriptContent": "if ((txn.pricing.discount.percent * 100) > txn.custom.discountRequiringApproval){\n  return true;\n}\n\nreturn false;"
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

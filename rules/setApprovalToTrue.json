@@ -1,6 +1,6 @@
 {
   "created": "2025-04-02T20:49:30.603251Z",
-  "modified": "2026-08-18T21:36:14.554160Z",
+  "modified": "2026-09-26T00:30:09.587814Z",
   "id": 5356,
   "name": "Set Approval To True",
   "variableName": "setApprovalToTrue",
@@ -15,9 +15,9 @@
   "actions": [
     {
       "type": "Determination",
-      "created": "2026-08-18T21:36:14.551291Z",
-      "modified": "2026-08-18T21:36:14.551291Z",
-      "id": 37465,
+      "created": "2026-09-26T00:30:09.585669Z",
+      "modified": "2026-09-26T00:30:09.585669Z",
+      "id": 47059,
       "fieldVariableName": "txn.custom.approved",
       "scriptId": null,
       "variableName": "setApprovalToTrue_action_1",

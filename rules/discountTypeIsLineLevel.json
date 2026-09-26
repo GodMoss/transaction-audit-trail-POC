@@ -1,0 +1,110 @@
+{
+  "created": "2026-09-25T23:18:16.124859Z",
+  "modified": "2026-09-26T00:30:10.261789Z",
+  "id": 16801,
+  "name": "Discount Type Is Line Level",
+  "variableName": "discountTypeIsLineLevel",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "any",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": [
+      {
+        "created": "2026-09-26T00:30:10.245433Z",
+        "modified": "2026-09-26T00:30:10.261852Z",
+        "id": 60829,
+        "index": 1,
+        "op": "equals",
+        "lhs": {
+          "field": true,
+          "dataType": "text",
+          "value": [
+            "txn.custom.discountingMethod"
+          ],
+          "additionalPath": null,
+          "scope": "TXN_HEADER"
+        },
+        "rhs": {
+          "field": false,
+          "dataType": "text",
+          "value": [
+            "Line Level Discounting"
+          ],
+          "additionalPath": null
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "Message",
+      "created": "2026-09-26T00:30:10.239355Z",
+      "modified": "2026-09-26T00:30:10.239355Z",
+      "id": 47078,
+      "fieldVariableName": "txn.custom.discountingMethod",
+      "scriptId": null,
+      "variableName": "discountTypeIsLineLevel_action_1",
+      "message": "Line level discounting enables editing of each transaction line discount. The line level discounts are summed across the entire transaction, and an overall percentage is calculated. ",
+      "messageType": "custom",
+      "color": "#3274cc",
+      "icon": "info",
+      "preventSave": false,
+      "targetType": "field"
+    },
+    {
+      "type": "Determination",
+      "created": "2026-09-26T00:30:10.241102Z",
+      "modified": "2026-09-26T00:30:10.241102Z",
+      "id": 47079,
+      "fieldVariableName": "txn.pricing.discount.amount",
+      "scriptId": 12336,
+      "variableName": "discountTypeIsLineLevel_action_2",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false,
+      "scriptContent": "return txn.line.functions.sumField(txn.line.pricing.discount.amount, 0);"
+    },
+    {
+      "type": "Determination",
+      "created": "2026-09-26T00:30:10.242576Z",
+      "modified": "2026-09-26T00:30:10.242576Z",
+      "id": 47080,
+      "fieldVariableName": "txn.custom.targetCustomerPrice",
+      "scriptId": null,
+      "variableName": "discountTypeIsLineLevel_action_3",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
+    },
+    {
+      "type": "Message",
+      "created": "2026-09-26T00:30:10.243892Z",
+      "modified": "2026-09-26T00:30:10.243892Z",
+      "id": 47081,
+      "fieldVariableName": "txn.custom.discountingMethod",
+      "scriptId": null,
+      "variableName": "discountTypeIsLineLevel_action_5",
+      "message": "Reverting to another Discounting Method, after adjusting Line-Level discounts, will overwrite changes made on the Line-Level.",
+      "messageType": "custom",
+      "color": "#ea001e",
+      "icon": "warn",
+      "preventSave": false,
+      "targetType": "field"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#discountTypeIsLineLevel",
+  "ruleGroups": [
+    "transactionLevelRules"
+  ],
+  "category": "CUSTOM"
+}

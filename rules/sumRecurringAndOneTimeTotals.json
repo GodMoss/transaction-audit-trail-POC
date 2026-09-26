@@ -1,0 +1,56 @@
+{
+  "created": "2026-09-26T00:30:10.256764Z",
+  "modified": "2026-09-26T00:30:10.256764Z",
+  "id": 16807,
+  "name": "Sum Recurring And One-Time Totals",
+  "variableName": "sumRecurringAndOneTimeTotals",
+  "description": "Sums extended net by charge type",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-09-26T00:30:10.258185Z",
+      "modified": "2026-09-26T00:30:10.258185Z",
+      "id": 47085,
+      "fieldVariableName": "txn.custom.recurringTotal",
+      "scriptId": 12344,
+      "variableName": "sumRecurringAndOneTimeTotals_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false,
+      "scriptContent": "return txn.line.functions.sumFieldIf(txn.line.pricing.extendedNet, txn.line.isConfigured != true && txn.line.custom.chargeType == \"Recurring\", 0);\n"
+    },
+    {
+      "type": "Determination",
+      "created": "2026-09-26T00:30:10.259448Z",
+      "modified": "2026-09-26T00:30:10.259448Z",
+      "id": 47086,
+      "fieldVariableName": "txn.custom.oneTimeTotal",
+      "scriptId": 12345,
+      "variableName": "sumRecurringAndOneTimeTotals_action_2",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false,
+      "scriptContent": "return txn.line.functions.sumFieldIf(txn.line.pricing.extendedNet, txn.line.isConfigured != true && txn.line.custom.chargeType == \"One-Time\", 0);\n"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#sumRecurringAndOneTimeTotals",
+  "ruleGroups": [
+    "aggregatesAndRollups"
+  ],
+  "category": "CUSTOM"
+}

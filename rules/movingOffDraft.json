@@ -1,6 +1,6 @@
 {
   "created": "2025-04-03T19:07:29.965806Z",
-  "modified": "2026-08-18T21:36:14.931745Z",
+  "modified": "2026-09-26T00:30:09.695305Z",
   "id": 5360,
   "name": "Initial Move Off Draft Stage",
   "variableName": "movingOffDraft",
@@ -15,9 +15,9 @@
   "actions": [
     {
       "type": "Determination",
-      "created": "2026-08-18T21:36:14.929347Z",
-      "modified": "2026-08-18T21:36:14.929347Z",
-      "id": 37483,
+      "created": "2026-09-26T00:30:09.693150Z",
+      "modified": "2026-09-26T00:30:09.693150Z",
+      "id": 47063,
       "fieldVariableName": "txn.custom.initialDraftStage",
       "scriptId": null,
       "variableName": "movingOffDraft_action_1",

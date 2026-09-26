@@ -1,0 +1,41 @@
+{
+  "created": "2026-09-25T23:18:16.087014Z",
+  "modified": "2026-09-26T00:30:09.673526Z",
+  "id": 16797,
+  "name": "Set Is Document Generated False",
+  "variableName": "setIsDocumentGeneratedFalse",
+  "description": "",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-09-26T00:30:09.671335Z",
+      "modified": "2026-09-26T00:30:09.671335Z",
+      "id": 47062,
+      "fieldVariableName": "txn.custom.isDocumentGenerated",
+      "scriptId": null,
+      "variableName": "setIsDocumentGeneratedFalse_action_1",
+      "values": [
+        "false"
+      ],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setIsDocumentGeneratedFalse",
+  "ruleGroups": [
+    "setIsDocumentGenerateFalse"
+  ],
+  "category": "CUSTOM"
+}

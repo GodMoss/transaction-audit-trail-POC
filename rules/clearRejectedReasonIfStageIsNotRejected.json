@@ -1,6 +1,6 @@
 {
   "created": "2025-04-04T19:11:02.019663Z",
-  "modified": "2026-08-18T21:36:14.517303Z",
+  "modified": "2026-09-26T00:30:10.003792Z",
   "id": 5374,
   "name": "Clear Rejected Reason If Stage Is Not Rejected",
   "variableName": "clearRejectedReasonIfStageIsNotRejected",
@@ -12,9 +12,9 @@
     "scriptId": null,
     "conditions": [
       {
-        "created": "2026-08-18T21:36:14.515237Z",
-        "modified": "2026-08-18T21:36:14.515237Z",
-        "id": 50506,
+        "created": "2026-09-26T00:30:10.001433Z",
+        "modified": "2026-09-26T00:30:10.001433Z",
+        "id": 60823,
         "index": 1,
         "op": "not equals",
         "lhs": {
@@ -40,9 +40,9 @@
   "actions": [
     {
       "type": "Determination",
-      "created": "2026-08-18T21:36:14.514070Z",
-      "modified": "2026-08-18T21:36:14.514070Z",
-      "id": 37463,
+      "created": "2026-09-26T00:30:09.999763Z",
+      "modified": "2026-09-26T00:30:09.999763Z",
+      "id": 47072,
       "fieldVariableName": "txn.custom.rejectedReason",
       "scriptId": null,
       "variableName": "clearRejectedReasonIfStageIsNotRejected_action_1",
