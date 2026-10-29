@@ -1,20 +1,20 @@
 {
   "created": "2026-09-25T23:18:16.124859Z",
-  "modified": "2026-09-26T00:30:10.261789Z",
+  "modified": "2026-10-29T16:22:09.203337Z",
   "id": 16801,
   "name": "Discount Type Is Line Level",
   "variableName": "discountTypeIsLineLevel",
   "description": "",
-  "status": "active",
+  "status": "inactive",
   "condition": {
     "groupingType": "any",
     "customLogic": null,
     "scriptId": null,
     "conditions": [
       {
-        "created": "2026-09-26T00:30:10.245433Z",
-        "modified": "2026-09-26T00:30:10.261852Z",
-        "id": 60829,
+        "created": "2026-10-29T16:22:09.153764Z",
+        "modified": "2026-10-29T16:22:09.153764Z",
+        "id": 68675,
         "index": 1,
         "op": "equals",
         "lhs": {
@@ -56,7 +56,7 @@
     {
       "type": "Determination",
       "created": "2026-09-26T00:30:10.241102Z",
-      "modified": "2026-09-26T00:30:10.241102Z",
+      "modified": "2026-10-29T16:22:09.203406Z",
       "id": 47079,
       "fieldVariableName": "txn.pricing.discount.amount",
       "scriptId": 12336,
@@ -68,21 +68,6 @@
       "unionWithCurrentValue": false,
       "clearValue": false,
       "scriptContent": "return txn.line.functions.sumField(txn.line.pricing.discount.amount, 0);"
-    },
-    {
-      "type": "Determination",
-      "created": "2026-09-26T00:30:10.242576Z",
-      "modified": "2026-09-26T00:30:10.242576Z",
-      "id": 47080,
-      "fieldVariableName": "txn.custom.targetCustomerPrice",
-      "scriptId": null,
-      "variableName": "discountTypeIsLineLevel_action_3",
-      "values": [],
-      "setReadOnly": true,
-      "overrideUserInput": true,
-      "showMessage": false,
-      "unionWithCurrentValue": false,
-      "clearValue": true
     },
     {
       "type": "Message",
@@ -98,6 +83,21 @@
       "icon": "warn",
       "preventSave": false,
       "targetType": "field"
+    },
+    {
+      "type": "Determination",
+      "created": "2026-09-26T00:30:10.242576Z",
+      "modified": "2026-10-29T16:22:09.203425Z",
+      "id": 47080,
+      "fieldVariableName": "txn.custom.targetCustomerPrice",
+      "scriptId": null,
+      "variableName": "discountTypeIsLineLevel_action_3",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": true
     }
   ],
   "lastModifiedBy": "provisioning-es-test@logik.io",

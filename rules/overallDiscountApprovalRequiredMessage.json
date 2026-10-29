@@ -1,11 +1,11 @@
 {
   "created": "2025-04-07T17:56:24.705549Z",
-  "modified": "2026-09-26T00:30:09.836993Z",
+  "modified": "2026-10-29T16:23:19.851148Z",
   "id": 5377,
   "name": "Overall Discount Approval Required Message",
   "variableName": "overallDiscountApprovalRequiredMessage",
   "description": "",
-  "status": "active",
+  "status": "inactive",
   "condition": {
     "groupingType": "script",
     "customLogic": null,

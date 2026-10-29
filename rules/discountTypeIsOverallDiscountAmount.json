@@ -1,20 +1,20 @@
 {
   "created": "2026-09-25T23:18:16.096807Z",
-  "modified": "2026-09-26T00:30:09.929434Z",
+  "modified": "2026-10-29T16:23:12.074407Z",
   "id": 16798,
   "name": "Discount Type Is Overall Discount Amount",
   "variableName": "discountTypeIsOverallDiscountAmount",
   "description": "Uses Overall Discount Amount to calculate Overall Discount Percent ",
-  "status": "active",
+  "status": "inactive",
   "condition": {
     "groupingType": "any",
     "customLogic": null,
     "scriptId": null,
     "conditions": [
       {
-        "created": "2026-09-26T00:30:09.925608Z",
-        "modified": "2026-09-26T00:30:09.925608Z",
-        "id": 60821,
+        "created": "2026-10-29T16:23:12.043299Z",
+        "modified": "2026-10-29T16:23:12.043299Z",
+        "id": 68683,
         "index": 1,
         "op": "equals",
         "lhs": {
@@ -36,9 +36,9 @@
         }
       },
       {
-        "created": "2026-09-26T00:30:09.927173Z",
-        "modified": "2026-09-26T00:30:09.927173Z",
-        "id": 60822,
+        "created": "2026-10-29T16:23:12.044744Z",
+        "modified": "2026-10-29T16:23:12.044744Z",
+        "id": 68684,
         "index": 2,
         "op": "equals",
         "lhs": {
@@ -65,7 +65,7 @@
     {
       "type": "Determination",
       "created": "2026-09-26T00:30:09.922536Z",
-      "modified": "2026-09-26T00:30:09.922536Z",
+      "modified": "2026-10-29T16:23:12.074449Z",
       "id": 47069,
       "fieldVariableName": "txn.custom.targetCustomerPrice",
       "scriptId": null,
@@ -80,7 +80,7 @@
     {
       "type": "Determination",
       "created": "2026-09-26T00:30:09.924142Z",
-      "modified": "2026-09-26T00:30:09.924142Z",
+      "modified": "2026-10-29T16:23:12.074463Z",
       "id": 47070,
       "fieldVariableName": "txn.pricing.discount.percent",
       "scriptId": 12324,

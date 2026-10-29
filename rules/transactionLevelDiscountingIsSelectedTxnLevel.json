@@ -1,20 +1,20 @@
 {
   "created": "2025-04-08T18:37:49.626311Z",
-  "modified": "2026-09-26T00:30:09.885967Z",
+  "modified": "2026-10-29T16:23:16.015378Z",
   "id": 5386,
   "name": "Transaction Level Discounting Is Selected (txn level)",
   "variableName": "transactionLevelDiscountingIsSelectedTxnLevel",
   "description": "",
-  "status": "active",
+  "status": "inactive",
   "condition": {
     "groupingType": "any",
     "customLogic": null,
     "scriptId": null,
     "conditions": [
       {
-        "created": "2026-09-26T00:30:09.883654Z",
-        "modified": "2026-09-26T00:30:09.883654Z",
-        "id": 60820,
+        "created": "2026-10-29T16:23:15.997825Z",
+        "modified": "2026-10-29T16:23:15.997825Z",
+        "id": 68685,
         "index": 1,
         "op": "equals",
         "lhs": {

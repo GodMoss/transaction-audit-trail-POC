@@ -1,20 +1,20 @@
 {
   "created": "2026-08-18T20:21:37.990340Z",
-  "modified": "2026-08-18T20:21:37.990340Z",
+  "modified": "2026-10-29T16:24:22.854624Z",
   "id": 12162,
   "name": "Quote Number",
   "variableName": "quoteNumber",
   "description": "",
-  "status": "active",
+  "status": "inactive",
   "condition": {
     "groupingType": "all",
     "customLogic": null,
     "scriptId": null,
     "conditions": [
       {
-        "created": "2026-08-18T20:21:37.992292Z",
-        "modified": "2026-08-18T20:21:37.992292Z",
-        "id": 48300,
+        "created": "2026-10-29T16:24:22.825746Z",
+        "modified": "2026-10-29T16:24:22.825746Z",
+        "id": 68690,
         "index": 1,
         "op": "equals",
         "lhs": {
@@ -41,7 +41,7 @@
     {
       "type": "Determination",
       "created": "2026-08-18T20:21:37.991444Z",
-      "modified": "2026-08-18T20:21:37.991444Z",
+      "modified": "2026-10-29T16:24:22.854749Z",
       "id": 37022,
       "fieldVariableName": "txn.custom.quoteName",
       "scriptId": 8322,

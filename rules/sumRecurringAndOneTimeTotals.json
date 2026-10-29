@@ -1,11 +1,11 @@
 {
   "created": "2026-09-26T00:30:10.256764Z",
-  "modified": "2026-09-26T00:30:10.256764Z",
+  "modified": "2026-10-29T16:22:16.856073Z",
   "id": 16807,
   "name": "Sum Recurring And One-Time Totals",
   "variableName": "sumRecurringAndOneTimeTotals",
   "description": "Sums extended net by charge type",
-  "status": "active",
+  "status": "inactive",
   "condition": {
     "groupingType": "always",
     "customLogic": null,
@@ -16,7 +16,7 @@
     {
       "type": "Determination",
       "created": "2026-09-26T00:30:10.258185Z",
-      "modified": "2026-09-26T00:30:10.258185Z",
+      "modified": "2026-10-29T16:22:16.856137Z",
       "id": 47085,
       "fieldVariableName": "txn.custom.recurringTotal",
       "scriptId": 12344,
@@ -32,7 +32,7 @@
     {
       "type": "Determination",
       "created": "2026-09-26T00:30:10.259448Z",
-      "modified": "2026-09-26T00:30:10.259448Z",
+      "modified": "2026-10-29T16:22:16.856156Z",
       "id": 47086,
       "fieldVariableName": "txn.custom.oneTimeTotal",
       "scriptId": 12345,

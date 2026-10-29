@@ -1,11 +1,11 @@
 {
   "created": "2025-04-02T20:49:51.188775Z",
-  "modified": "2026-09-26T00:30:09.482088Z",
+  "modified": "2026-10-29T16:24:12.234525Z",
   "id": 5357,
   "name": "Set Approval To False",
   "variableName": "setApprovalToFalse",
   "description": "Used for entry criteria of Pending Approval stage",
-  "status": "active",
+  "status": "inactive",
   "condition": {
     "groupingType": "always",
     "customLogic": null,
@@ -16,7 +16,7 @@
     {
       "type": "Determination",
       "created": "2026-09-26T00:30:09.479733Z",
-      "modified": "2026-09-26T00:30:09.479733Z",
+      "modified": "2026-10-29T16:24:12.234576Z",
       "id": 47055,
       "fieldVariableName": "txn.custom.approved",
       "scriptId": null,
