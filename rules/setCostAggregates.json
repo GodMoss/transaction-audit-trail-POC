@@ -1,0 +1,88 @@
+{
+  "created": "2026-11-25T18:41:11.390704Z",
+  "modified": "2026-11-25T18:41:11.390704Z",
+  "id": 19731,
+  "name": "Set Cost Aggregates",
+  "variableName": "setCostAggregates",
+  "description": "Rolls line cost up into header software, hardware, services and total cost fields",
+  "status": "active",
+  "condition": {
+    "groupingType": "always",
+    "customLogic": null,
+    "scriptId": null,
+    "conditions": []
+  },
+  "actions": [
+    {
+      "type": "Determination",
+      "created": "2026-11-25T18:41:11.394532Z",
+      "modified": "2026-11-25T18:41:11.394532Z",
+      "id": 54705,
+      "fieldVariableName": "txn.custom.softwareCost",
+      "scriptId": 13573,
+      "variableName": "setCostAggregates_action_1",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false,
+      "scriptContent": "let softCost = txn.line.functions.sumFieldIf(txn.line.custom.cost, txn.line.custom.productType == 'Software', 0);\nreturn softCost;"
+    },
+    {
+      "type": "Determination",
+      "created": "2026-11-25T18:41:11.398002Z",
+      "modified": "2026-11-25T18:41:11.398002Z",
+      "id": 54706,
+      "fieldVariableName": "txn.custom.hardwareCost",
+      "scriptId": 13574,
+      "variableName": "setCostAggregates_action_2",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false,
+      "scriptContent": "let hardCost = txn.line.functions.sumFieldIf(txn.line.custom.cost, txn.line.custom.productType == 'Hardware', 0);\nreturn hardCost;"
+    },
+    {
+      "type": "Determination",
+      "created": "2026-11-25T18:41:11.399872Z",
+      "modified": "2026-11-25T18:41:11.399872Z",
+      "id": 54707,
+      "fieldVariableName": "txn.custom.servicesCost",
+      "scriptId": 13575,
+      "variableName": "setCostAggregates_action_3",
+      "values": [],
+      "setReadOnly": true,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false,
+      "scriptContent": "let servCost = txn.line.functions.sumFieldIf(txn.line.custom.cost, txn.line.custom.productType == 'Services', 0);\nreturn servCost;"
+    },
+    {
+      "type": "Determination",
+      "created": "2026-11-25T18:41:11.401711Z",
+      "modified": "2026-11-25T18:41:11.401711Z",
+      "id": 54708,
+      "fieldVariableName": "txn.custom.totalCost",
+      "scriptId": 13576,
+      "variableName": "setCostAggregates_action_4",
+      "values": [],
+      "setReadOnly": false,
+      "overrideUserInput": true,
+      "showMessage": false,
+      "unionWithCurrentValue": false,
+      "clearValue": false,
+      "scriptContent": "let totalCost = txn.line.functions.sumField(txn.line.custom.cost, 0);\nreturn totalCost;"
+    }
+  ],
+  "lastModifiedBy": "provisioning-es-test@logik.io",
+  "scope": "TXN_HEADER",
+  "entityIdentifier": "TXN_HEADER#setCostAggregates",
+  "ruleGroups": [
+    "aggregatesAndRollups"
+  ],
+  "category": "CUSTOM"
+}
